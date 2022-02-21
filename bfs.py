@@ -15,7 +15,7 @@ def bfs(visited,graph, node):
     
     # starting node
     queue.append(node)
-    visited.append(node)
+    visited.add(node)
     
     while queue:
 
@@ -24,7 +24,7 @@ def bfs(visited,graph, node):
 
         for neighbour in graph[s]:
             if neighbour not in visited:
-                visited.append(neighbour)
+                visited.add(neighbour)
                 queue.append(neighbour)
                 
 nodes = ['a','b','c','d','e','f','g','h','i','j']
@@ -33,7 +33,7 @@ edges = [('a','b'),('b','c'),('c','a'),('c','d'),('d','f'),('e','f'),('f','i'),(
 
 graph = Graph(edges)
 
-visited = []
+visited = set()
 print('BFS')
 bfs(visited,graph, 'i')
 print()

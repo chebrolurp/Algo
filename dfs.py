@@ -15,7 +15,7 @@ def dfs(visited, graph, node):
     if node not in visited:
         
         print(node, end = " ")
-        visited.append(node)
+        visited.add(node)
         
         for neighbour in graph[node]:
             dfs(visited, graph, neighbour)
@@ -27,7 +27,7 @@ edges = [('a','b'),('b','c'),('c','a'),('c','d'),('d','f'),('e','f'),('f','i'),(
 
 graph = Graph(edges)
 
-visited = []
+visited = set()
 print('DFS')
 dfs(visited,graph,'i')
 print()
